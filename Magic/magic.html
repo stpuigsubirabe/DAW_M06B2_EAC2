@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Magic: The Gathering</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+	<link rel="stylesheet" type="text/css" href="css/magic.css">
+
+  <!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="js/magic.js"></script>
+</head>
+<body>
+<header>
+  Combat màgic
+</header>
+
+<div id="tapet">
+  <div id="terreny-joc">
+
+    <!-- Carta jugada d'exemple -->
+    <div class="carta-jugada" style="background-color:green">
+      <span>Marwyn, the Nurturer</span>
+      <img src="https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/a/aad61d99-5c8e-47b7-ab1a-e70905f59205.jpg?1611966171">
+      <p>
+        <span>1</span>
+        /
+        <span>1</span>
+      </p>
+    </div>
+    <!-- Fi de la carta jugada d'exemple -->
+  </div>
+</div>
+
+<div id="cartes-ma">
+  <!-- Inici Carta 1 -->
+  <div class="carta" color="blue">
+
+    <div class="fons-carta">
+
+      <div class="card-frame">
+        <div class="opcions">
+          <span class="fas fa-dice"></span>
+          <span class="fas fa-arrow-right"></span>
+          <span class="fas fa-arrow-left"></span>
+          <span class="fas fa-trash-alt"></span>
+        </div>
+
+        <div class="contingut-carta">
+          <h1 class="nom">Misdirection</h1>
+          <div class="mana"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/3.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/U.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/U.svg" class="mana-icon"></div>
+        </div>
+
+        <img class="imatge-carta" src="https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/9/c96763d6-0cea-40ed-afb2-886bfebe50a0.jpg?1592764638" alt="nissa art">
+
+        <div class="tipus-carta">
+          <h1 class="type">Instant</h1>
+        </div>
+
+        <div class="text-carta">
+          <p class="descripcio marge-intern">You may exile a blue card from your hand rather than pay this spell's mana cost.<br>Change the target of target spell with a single target.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Fi carta 1 -->
+
+  <!-- Inici carta 2 -->
+  <div class="carta" color="black">
+
+    <div class="fons-carta">
+
+      <div class="card-frame">
+        <div class="opcions">
+          <span class="fas fa-dice"></span>
+          <span class="fas fa-arrow-right"></span>
+          <span class="fas fa-arrow-left"></span>
+          <span class="fas fa-trash-alt"></span>
+        </div>
+
+        <div class="contingut-carta">
+          <h1 class="nom">Acid-Spewer Dragon</h1>
+          <div class="mana"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/5.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/B.svg" class="mana-icon"></div>
+        </div>
+
+        <img class="imatge-carta" src="https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/a/aa8f58f1-4843-4926-b3c4-98898201c216.jpg?1562791329" alt="nissa art">
+
+        <div class="tipus-carta">
+          <h1 class="type">Creature — Dragon</h1>
+        </div>
+
+        <div class="text-carta">
+          <p class="descripcio marge-intern">Flying, deathtouch<br>Megamorph <img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/5.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/B.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/B.svg" class="mana-icon"> (You may cast this card face down as a 2/2 creature for <img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/3.svg" class="mana-icon">. Turn it face up any time for its megamorph cost and put a +1/+1 counter on it.)<br>When Acid-Spewer Dragon is turned face up, put a +1/+1 counter on each other Dragon creature you control.</p>
+        </div>
+
+        <div class="informacio-inferior marge-dintre">
+          <!-- Força i resistència -->
+          <div class="batalla">
+            <span class="power">3</span>
+            /
+            <span class="toughness">3</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Fi carta 2 -->
+  <!-- Inici carta 3 -->
+  <div class="carta" color="white">
+
+    <div class="fons-carta">
+
+      <div class="card-frame">
+        <div class="opcions">
+          <span class="fas fa-dice"></span>
+          <span class="fas fa-arrow-right"></span>
+          <span class="fas fa-arrow-left"></span>
+          <span class="fas fa-trash-alt"></span>
+        </div>
+
+        <div class="contingut-carta">
+          <h1 class="nom">Dawn of Hope</h1>
+          <div class="mana"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/1.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg" class="mana-icon"></div>
+        </div>
+
+        <img class="imatge-carta" src="https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/f/cf2a9e82-8670-4b7f-b5f0-8e10f8aeff1c.jpg?1572892521" alt="nissa art">
+
+        <div class="tipus-carta">
+          <h1 class="type">Enchantment</h1>
+        </div>
+
+        <div class="text-carta">
+          <p class="descripcio marge-intern">Whenever you gain life, you may pay <img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/2.svg" class="mana-icon">. If you do, draw a card.<br><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/3.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/W.svg" class="mana-icon">: Create a 1/1 white Soldier creature token with lifelink.</p>
+          <p class="text-farciment">"To wage war, secure peace within yourself."<br>—Emmara</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Fi carta 3 -->
+
+  <!-- Inici carta 4 -->
+  <div class="carta" color="red">
+
+    <div class="fons-carta">
+
+      <div class="card-frame">
+        <div class="opcions">
+          <span class="fas fa-dice"></span>
+          <span class="fas fa-arrow-right"></span>
+          <span class="fas fa-arrow-left"></span>
+          <span class="fas fa-trash-alt"></span>
+        </div>
+        <div class="contingut-carta">
+          <h1 class="nom">Drakuseth, Maw of Flames</h1>
+          <div class="mana"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/4.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/R.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/R.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/R.svg" class="mana-icon"></div>
+        </div>
+
+        <img class="imatge-carta" src="https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/0/d09af78f-efde-4107-8406-cb12fd11c686.jpg?1592516912" alt="nissa art">
+
+        <div class="tipus-carta">
+          <h1 class="type">Legendary Creature — Dragon</h1>
+        </div>
+
+        <div class="text-carta">
+          <p class="descripcio marge-intern">Flying<br>Whenever Drakuseth, Maw of Flames attacks, it deals 4 damage to any target and 3 damage to each of up to two other targets.</p>
+          <p class="text-farciment">"Spread out, you idiots! Spread out!"<br>—Marsden, party leader, last words</p>
+        </div>
+
+        <div class="informacio-inferior marge-dintre">
+          <!-- Força i resistència -->
+            <div class="batalla">
+              <span class="power">7</span>
+              /
+              <span class="toughness">7</span>
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Fi carta 4 -->
+
+  <!-- Inici carta 5 -->
+  <div class="carta" color="green">
+
+    <div class="fons-carta">
+
+      <div class="card-frame">
+      <div class="opcions">
+        <span class="fas fa-dice"></span>
+          <span class="fas fa-arrow-right"></span>
+          <span class="fas fa-arrow-left"></span>
+          <span class="fas fa-trash-alt"></span>
+      </div>
+
+        <div class="contingut-carta">
+          <h1 class="nom">Doubling Chant</h1>
+          <div class="mana"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/5.svg" class="mana-icon"><img src="https://c2.scryfall.com/file/scryfall-symbols/card-symbols/G.svg" class="mana-icon"></div>
+        </div>
+
+        <img class="imatge-carta" src="https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/7/f71dc232-9b7e-4c0e-ac05-8e48b4936aa9.jpg?1562666461" alt="nissa art">
+
+        <div class="tipus-carta">
+          <h1 class="type">Sorcery</h1>
+        </div>
+
+        <div class="text-carta">
+          <p class="descripcio marge-intern">For each creature you control, you may search your library for a creature card with the same name as that creature. Put those cards onto the batallafield, then shuffle your library.</p>
+          <p class="text-farciment">What's scarier than one of every beast in the forest?</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Fi carta 5 -->
+
+
+</div>
+
+<!-- Formulari per afegir nova carta -->
+<button class="boto-carta">Afegeix carta</button>
+
+<div class="form-popup" id="formulari">
+  <form class="form-container">
+    <label for="nom"><b>Nom:</b></label>
+    <input type="text" placeholder="Nom de la carta..." name="nom" required id="nom">
+
+    <label for="nom"><b>Mana:</b></label>
+    <input type="text" placeholder="Cost..." name="mana" id="mana">
+
+    <label for="color"><b>Color:</b></label>
+    <select id="color">
+      <option value="red">Vermella</option>
+      <option value="black">Negra</option>
+      <option value="blue">Blava</option>
+      <option value="green">Verda</option>
+      <option value="white">Blanca</option>
+    </select>
+
+    <label for="imat"><b>URL imatge:</b></label>
+    <input type="text" placeholder="Il·lustració..." name="imat" required id="imat">
+
+    <label for="tipus"><b>Tipus:</b></label>
+    <input type="text" placeholder="Tipus de carta..." name="tipus" required id="tipus">
+
+    <label for="desc"><b>Descripció:</b></label>
+    <input type="text" placeholder="Descripció..." name="desc" required id="desc">
+
+    <label for="atac"><b>Atac:</b></label>
+    <input type="text" placeholder="Punts..." name="atac" id="atac">
+
+    <label for="defensa"><b>Defensa:</b></label>
+    <input type="text" placeholder="Punts..." name="defensa" id="defensa">
+
+    <button type="submit" class="btn">Afegeix</button>
+    <button type="button" class="btn cancel">Tanca</button>
+  </form>
+</div>
+</body>
+</html>
