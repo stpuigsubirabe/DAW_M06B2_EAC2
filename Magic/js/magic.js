@@ -14,7 +14,7 @@ function transformar_text(text_simbols){
 	return text_transformat;
 }
 
-//****************************** Exercici 1 Amagar icones de les cartes **********************************************
+//****************************** Exercici 1 Amagar icones de les cartes *********************************************
 
 // buscar els elements a partir d'un element amb ID al dom -> id="cartes-ma"
 
@@ -38,16 +38,22 @@ for (let i=0; i<$cartes.length;i++){
 
 }
 
-//****************************** Exercici 2 Eliminar icona cubell d'escombreries ************************************
+//****************************** Exercici 2 Eliminar carta  *******************************************************
 
-//// buscar els elements a partir d'un element amb ID al dom -> id="cartes-ma">"
+// buscar els elements a partir d'un element amb ID al dom -> id="cartes-ma">"
 
     var cartes_ma = document.getElementById('cartes-ma');
 
+    // extraiem les cartes.
+    var cartes = cartes_ma.querySelectorAll('div.carta');
 
-    // elements presents a cartes_ma
+    for(let i=0;i<cartes.length;i++){
+      let carta = cartes[i];
+      let botons = carta.getElementsByTagName('span');
+      let cubell = botons.item(3);
+      cubell.addEventListener('click',function(){carta.parentNode.removeChild(carta);})
+    }
 
-    var elements = cartes_ma.childNodes;
-
+//****************************** Exercici 3 *******************************************************
 
 });
