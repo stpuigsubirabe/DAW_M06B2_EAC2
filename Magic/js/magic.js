@@ -14,7 +14,7 @@ function transformar_text(text_simbols){
 	return text_transformat;
 }
 
-//****************************** Exercici 1 Amagar icones de les cartes *********************************************
+//****************************** Exercici 1 Amagar icones de les cartes JQ*********************************************
 
 // buscar els elements a partir d'un element amb ID al dom -> id="cartes-ma"
 
@@ -38,7 +38,7 @@ for (let i=0; i<$cartes.length;i++){
 
 }
 
-//****************************** Exercici 2 Eliminar carta  *******************************************************
+//****************************** Exercici 2 Eliminar carta JS *********************************************************
 
 // buscar els elements a partir d'un element amb ID al dom -> id="cartes-ma">"
 
@@ -55,5 +55,86 @@ for (let i=0; i<$cartes.length;i++){
     }
 
 //****************************** Exercici 3 *******************************************************
+
+// seleccionar botó JQ
+    var $cartesma = $('#cartes-ma');
+    var $cartes = $cartesma.children('.carta');
+    console.log ($cartes);
+
+    for (let i=0;i<$cartes.length;i++){
+        $carta = getCartaJQ($cartes,i);
+        //afegim un atribut on indiquem la posició de la carta
+        $carta.attr('posicio',i);
+        // contingut  html de la carta de la carta html
+        console.log($carta[0].outerHTML);
+
+        let $botoEsquerra = getButtonJQ($carta,'.fa-arrow-left');
+        let $botoDret = getButtonJQ($carta,'.fa-arrow-right');
+
+        console.log($botoEsquerra);
+         console.log($botoDret);
+
+
+        $botoEsquerra.on('click',function(){$carta.before($carta[0].outerHTML);});
+        $botoDret.on('click',function(){$carta.append($carta[0].outerHTML);$carta.remove();})
+
+
+
+
+    }
+
+
+
+
+
+
+function getCartaJQ(cartes,pos){ return  $(cartes).eq(pos);}
+
+function getButtonJQ(carta,classname){return $(carta).find(classname);}
+
+
+
+/**
+
+    for (let i=0; i< $cartes.length;i++){
+
+        let $carta = $cartes.eq(i);
+
+
+
+
+
+        let $opcions = $carta.find('.opcions');
+        let $botons = $opcions.children();
+
+        let $botoDret = $botons.eq(1);
+        let $botoEsquerra= $botons.eq(2);
+
+        $botoDret.on('click', function(){
+
+        });
+        $botoEsquerra.on('mouseout',function(){$carta.find('span').hide();});
+    }
+
+
+        function moureEsquerra(){
+
+            $carta.hide();
+            console.log(Int16Array);
+
+        }
+    **/
+     /*
+        function moureDreta(posCarta){
+
+            console.log(posCarta);
+
+            $carta.insertBefore($cartaPosterior);
+
+        }
+
+    **/
+
+
 
 });
