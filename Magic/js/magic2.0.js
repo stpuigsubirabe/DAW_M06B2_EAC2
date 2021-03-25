@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded",function(event){
 
     //* Exercici 1 Amagar icones de les cartes JQ
+
+
     let $cartesma = $('#cartes-ma');
     let $cartes = $cartesma.children('.carta');
     let $options = $cartes.find('.opcions');
@@ -22,7 +24,6 @@ document.addEventListener("DOMContentLoaded",function(event){
 
 //*********************************************************************************************************************
     //* Exercici 2 Cubell d'escombreries
-
 
 
     var cartes_ma = document.getElementById('cartes-ma');
@@ -51,6 +52,9 @@ document.addEventListener("DOMContentLoaded",function(event){
 
     }
 
+//*********************************************************************************************************************
+    //* Exercici 4
+
 });
 
 
@@ -65,7 +69,11 @@ function getButtonJS(carta,classname){
 function getCartaJQ(cartes,pos){ return  $(cartes).eq(pos);}
 
 function getButtonJQ(carta,classname){return $(carta).find(classname);}
-
+/**
+*
+* Funcio per moure les cartes cap a l'esquerra al clickar sobre la fletxa esquerra.
+*
+*/
 function moureEsquerraJQ(){
 
     // desencadenant
@@ -77,7 +85,11 @@ function moureEsquerraJQ(){
     if (posicio > 0){$(cartes).children('.carta').get(posicio-1).before(carta); }
 
 }
-
+/**
+*
+* Funcio per moure les cartes cap a la dreta al clickar sobre la fletxa dreta.
+*
+*/
 function moureDretaJQ(){
 
     // desencadenant
@@ -90,14 +102,6 @@ function moureDretaJQ(){
     if (posicio < numCartes-1 ){$(cartes).children('.carta').get(posicio+1).after(carta); }
 
 }
-
-
-
-
-
-
-
-
 
 function transformar_text(text_simbols){
 	//Convertim els salts de línia a format HTML
