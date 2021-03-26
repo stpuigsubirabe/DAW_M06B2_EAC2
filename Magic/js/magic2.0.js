@@ -53,12 +53,26 @@ document.addEventListener("DOMContentLoaded",function(event){
     }
 
 //*********************************************************************************************************************
-    //* Exercici 4
+    //* Exercici 4 Crear carta al tereny de joc
+
+
+    for(let i=0;i<cartes.length;i++){
+
+        let carta = getCartaJS(cartes,i);
+        let dausButton = getButtonJS(carta,'fa-dice');
+        dausButton.addEventListener('click',jugarCartaJS)
+
+    }
 
 });
 
-
-
+/**
+*
+* Funcio que retorna una carta usant Java Script
+* param: col·lecció de cartes
+* param: posició de la carta a retornar
+*
+*/
 function getCartaJS(cartes,pos){return cartes[pos];}
 
 function getButtonJS(carta,classname){
@@ -102,6 +116,34 @@ function moureDretaJQ(){
     if (posicio < numCartes-1 ){$(cartes).children('.carta').get(posicio+1).after(carta); }
 
 }
+function jugarCartaJS(event){
+
+    let botoDaus = event.target;
+    let carta = botoDaus.closest('.carta');
+    let colorCarta = carta.getAttribute('color');
+    let nomCarta = carta.getElementsByClassName('nom')[0].innerHTML;
+    let imgCarta = carta.getElementsByClassName('imatge-carta')[0].getAttribute('src');
+
+    let forca;
+    let resistencia;
+
+    if (carta.getElementsByClassName('batalla')[0] != undefined){
+
+        forca = carta.getElementsByClassName('power')[0].innerHTML;
+        resistencia = carta.getElementsByClassName('toughness')[0].innerHTML;
+    }
+
+
+    console.log(carta);
+    console.log(colorCarta);
+    console.log(nomCarta);
+    console.log(imgCarta);
+    console.log(forca);
+    console.log(resistencia);
+
+
+
+}
 
 function transformar_text(text_simbols){
 	//Convertim els salts de línia a format HTML
@@ -116,3 +158,4 @@ function transformar_text(text_simbols){
 	});
 	return text_transformat;
 }
+
