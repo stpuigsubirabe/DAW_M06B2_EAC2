@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded",function(event){
     }
 
 //*********************************************************************************************************************
-    //* Exercici 4 Crear carta al tereny de joc
+    //* Exercici 4 Crear carta al tereny de joc JS
 
 
     for(let i=0;i<cartes.length;i++){
@@ -63,6 +63,19 @@ document.addEventListener("DOMContentLoaded",function(event){
         dausButton.addEventListener('click',jugarCartaJS)
 
     }
+
+//*********************************************************************************************************************
+    //* Exercici 5 Afegeix carta JQ - Mostrar formulari
+
+    let $formulari = $('#formulari');
+    $formulari.siblings('.boto-carta').on('click',function(){$formulari.show();})
+
+
+//*********************************************************************************************************************
+    //* Exercici 5 Afegeix carta JQ - Mostrar formulari
+
+
+
 
 });
 
