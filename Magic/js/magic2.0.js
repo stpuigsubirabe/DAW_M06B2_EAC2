@@ -74,14 +74,32 @@ document.addEventListener("DOMContentLoaded",function(event){
 *
 */
 function getCartaJS(cartes,pos){return cartes[pos];}
-
+/**
+*
+*Funcio que retorna un element de la carta que actua com a botó usant Java Script
+*param: carta
+*param: class de l'element a retornar
+*
+*/
 function getButtonJS(carta,classname){
     let collectionHTML = carta.getElementsByClassName(classname);
     return collectionHTML.item(0);
 }
-
+/**
+*
+* Funcio que retorna una carta usant JQuery
+* param: col·lecció de cartes
+* param: posició de la carta a retornar
+*
+*/
 function getCartaJQ(cartes,pos){ return  $(cartes).eq(pos);}
-
+/**
+*
+*Funcio que retorna un element de la carta que actua com a botó usant JQuery
+*param: carta
+*param: class de l'element a retornar
+*
+*/
 function getButtonJQ(carta,classname){return $(carta).find(classname);}
 /**
 *
@@ -116,7 +134,14 @@ function moureDretaJQ(){
     if (posicio < numCartes-1 ){$(cartes).children('.carta').get(posicio+1).after(carta); }
 
 }
+/**
+*
+* Funcio per juagar la carta al clickar sobre els daus.
+*
+*/
 function jugarCartaJS(event){
+
+    // recollir dades
 
     let botoDaus = event.target;
     let carta = botoDaus.closest('.carta');
@@ -133,15 +158,39 @@ function jugarCartaJS(event){
         resistencia = carta.getElementsByClassName('toughness')[0].innerHTML;
     }
 
+    //crear carta
 
-    console.log(carta);
-    console.log(colorCarta);
-    console.log(nomCarta);
-    console.log(imgCarta);
-    console.log(forca);
-    console.log(resistencia);
+    let cartaJugada = document.createElement('div');
+    cartaJugada.classList.add('carta-jugada');
+    cartaJugada.setAttribute('style','background-color:'+colorCarta);
 
+    let spanNom = document.createElement('span');
+    spanNom.innerHTML=nomCarta;
+    cartaJugada.appendChild(spanNom);
 
+    let imgCartaJugada = document.createElement('img');
+    imgCartaJugada.setAttribute('src',imgCarta);
+    cartaJugada.appendChild(imgCartaJugada);
+
+    if(forca != undefined){
+
+        let paragraf = document.createElement('p');
+        let spanForca = document.createElement('span');
+        spanForca.innerHTML= forca;
+        paragraf.appendChild(spanForca);
+        paragraf.innerHTML = paragraf.innerHTML + '/';
+        let spanResistencia = document.createElement('span');
+        spanResistencia.innerHTML= resistencia;
+        paragraf.appendChild(spanResistencia);
+
+         cartaJugada.appendChild(paragraf);
+
+    }
+
+    //insertar carta
+
+    let terrenyJoc = document.getElementById('terreny-joc');
+    terrenyJoc.appendChild(cartaJugada);
 
 }
 
