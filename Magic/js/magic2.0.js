@@ -68,11 +68,14 @@ document.addEventListener("DOMContentLoaded",function(event){
     //* Exercici 5 Afegeix carta JQ - Mostrar formulari
 
     let $formulari = $('#formulari');
-    $formulari.siblings('.boto-carta').on('click',function(){$formulari.show();})
+    $formulari.siblings('.boto-carta').on('click',function(){$formulari.show()})
 
 
 //*********************************************************************************************************************
-    //* Exercici 5 Afegeix carta JQ - Mostrar formulari
+    //* Exercici 6
+
+    $formulari.find('button[type=submit]').on('click',function(){alert('afegir')})
+    $formulari.find('button[type=button]').on('click',function(){$formulari.hide()})
 
 
 
