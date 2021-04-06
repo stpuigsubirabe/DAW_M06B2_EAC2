@@ -65,19 +65,17 @@ document.addEventListener("DOMContentLoaded",function(event){
     }
 
 //*********************************************************************************************************************
-    //* Exercici 5 Afegeix carta JQ - Mostrar formulari
+    //* Exercici 5 - Mostrar formulari JQ
 
     let $formulari = $('#formulari');
     $formulari.siblings('.boto-carta').on('click',function(){$formulari.show()})
 
 
 //*********************************************************************************************************************
-    //* Exercici 6
+    //* Exercici 6 Crear una nova carta fent servir el Formulari JQ
 
-    $formulari.find('button[type=submit]').on('click',function(){alert('afegir')})
+    $formulari.find('button[type=submit]').on('click',crearNovaCartaJQ)
     $formulari.find('button[type=button]').on('click',function(){$formulari.hide()})
-
-
 
 
 });
@@ -207,6 +205,91 @@ function jugarCartaJS(event){
 
     let terrenyJoc = document.getElementById('terreny-joc');
     terrenyJoc.appendChild(cartaJugada);
+
+}
+function crearNovaCartaJQ(){
+
+    event.preventDefault();
+    $('#formulari').hide();
+
+    // Recollir dades del fotmulari
+
+    let nom = $('#nom').val();
+    let mana = $('#mana').val();
+    let color = $('#color').val();
+    let imat = $('#imat').val();
+    let tipus = $('#tipus').val();
+    let descripcio = $('#desc').val();
+    let atac = $('#atac').val();
+    let defensa = $('#defensa').val();
+
+    let imgMana = transformar_text(mana);
+
+console.log(atac);
+    // Crear carta
+
+    let $cartaNova = $('<div></div>').addClass('carta').attr('color',color);
+
+
+    let $fonsCarta = $('<div></div>').addClass('fons-carta');
+    let $cardFrame = $('<div></div>').addClass('card-frame');
+
+    let $opcionsCarta = $('<div></div>').addClass('opcions');
+    $opcionsCarta.append($('<span></span>').addClass('fas fa-dice'));
+    $opcionsCarta.append($('<span></span>').addClass('fas fa-arrow-right'));
+    $opcionsCarta.append($('<span></span>').addClass('fas fa-arrow-left'));
+    $opcionsCarta.append($('<span></span>').addClass('fas fa-trash-alt'));
+
+
+
+    let $contingut = $('<div></div>').addClass('contingut-carta');
+    $contingut.append($('<h1></h1>').addClass('nom').text(nom + ''));
+
+    let $mana = $('<div></div>').addClass('mana');
+    $mana.append(imgMana);
+    $contingut.append($mana);
+
+    let $imgCarta = $('<img>');
+    $imgCarta.addClass('imatge-carta');
+    $imgCarta.attr('src',imat);
+    $imgCarta.attr('alt','nissa art');
+
+
+    let $tipusCarta = $('<div></div>').addClass('tipus-carta');
+    $tipusCarta.append($('<h1></h1>').addClass('type').text(tipus));
+
+
+
+    let $textCarta = $('<div></div>').addClass('text-carta');
+    $textCarta.append($('<p></p>').addClass('descripcio marge-intern').text(descripcio));
+    $textCarta.append($('<p></p>').addClass('text-farciment').text('farciment'));
+
+
+    // Atac i defensa
+
+    let $dadesCombat = $('<div></div>').addClass('informacio-inferior marge-dintre');
+    let $batalla = $('<div></div>').addClass('batalla');
+    $batalla.append($('<span></span>').addClass('power').text(atac));
+    $batalla.append('/');
+    $batalla.append($('<span></span>').addClass('toughness').text(defensa));
+
+    $dadesCombat.append($batalla)
+
+    // Afegim els diferents elements a la carta
+
+    $fonsCarta.append($cardFrame);
+    $cardFrame.append($opcionsCarta);
+    $cardFrame.append($contingut);
+    $cardFrame.append($imgCarta);
+    $cardFrame.append($tipusCarta);
+    $cardFrame.append($textCarta);
+    if (atac != ''){$cardFrame.append($dadesCombat)}
+    $cartaNova.append($fonsCarta);
+
+
+
+    $('#cartes-ma').append($cartaNova);
+
 
 }
 
