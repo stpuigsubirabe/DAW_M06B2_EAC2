@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded",function(event){
 
+
+
+
+
+
     //* Exercici 1 Amagar icones de les cartes JQ
 
-
+/**
     let $cartesma = $('#cartes-ma');
     let $cartes = $cartesma.children('.carta');
     let $options = $cartes.find('.opcions');
@@ -21,11 +26,12 @@ document.addEventListener("DOMContentLoaded",function(event){
         $carta.on('mouseout',function(){$carta.find('span').hide();})
 
     }
-
+*/
+    amagarIconesJQ();
 //*********************************************************************************************************************
     //* Exercici 2 Cubell d'escombreries
 
-
+/**
     var cartes_ma = document.getElementById('cartes-ma');
     var cartes = cartes_ma.querySelectorAll('div.carta');
     for(let i=0;i<cartes.length;i++){
@@ -35,11 +41,12 @@ document.addEventListener("DOMContentLoaded",function(event){
         cubellButton.addEventListener('click',function(){carta.parentNode.removeChild(carta);})
 
     }
-
+    */
+    cubellEscombreriesJS();
 //*********************************************************************************************************************
     //* Exercici 3 Moure cartes
 
-
+/**
     for (let i=0; i<$cartes.length; i++){
 
         let $carta = getCartaJQ($cartes,i);
@@ -51,10 +58,12 @@ document.addEventListener("DOMContentLoaded",function(event){
         $botoDret.on('click',moureDretaJQ);
 
     }
+    */
 
+    moureCartesJQ();
 //*********************************************************************************************************************
     //* Exercici 4 Crear carta al tereny de joc JS
-
+/**
 
     for(let i=0;i<cartes.length;i++){
 
@@ -63,7 +72,8 @@ document.addEventListener("DOMContentLoaded",function(event){
         dausButton.addEventListener('click',jugarCartaJS)
 
     }
-
+*/
+    cartaJocJS();
 //*********************************************************************************************************************
     //* Exercici 5 - Mostrar formulari JQ
 
@@ -290,9 +300,18 @@ console.log(atac);
 
     $('#cartes-ma').append($cartaNova);
 
+    amagarIconesJQ();
+    cubellEscombreriesJS();
+    moureCartesJQ();
+    cartaJocJS();
+
 
 }
-
+/**
+*
+*Funcio donada al enunciat
+*
+*/
 function transformar_text(text_simbols){
 	//Convertim els salts de línia a format HTML
 	text_transformat = text_simbols.replace(/\r?\n/g, "<br />");
@@ -306,4 +325,92 @@ function transformar_text(text_simbols){
 	});
 	return text_transformat;
 }
+
+/**
+*
+* Exercici 1 Amagar icones de les cartes JQ
+*
+*/
+function amagarIconesJQ(){
+
+    let $cartesma = $('#cartes-ma');
+    let $cartes = $cartesma.children('.carta');
+    let $options = $cartes.find('.opcions');
+    let $icones = $options.children('span');
+
+    $icones.hide();
+
+    // quan passem el ratolí a sobre una carta es mostraran
+
+    for (let i=0; i<$cartes.length; i++){
+         let $carta = $cartes.eq(i);
+
+        // la superficie de la carta la formen tots els elements que hi trobem dins.
+        $carta = $carta.children('*');
+        $carta.on('mouseover',function(){$carta.find('span').show();})
+        $carta.on('mouseout',function(){$carta.find('span').hide();})
+
+    }
+}
+/**
+*
+* Exercici 2 Cubell d'escombreries
+*
+*/
+function cubellEscombreriesJS(){
+
+     var cartes_ma = document.getElementById('cartes-ma');
+     var cartes = cartes_ma.querySelectorAll('div.carta');
+     for(let i=0;i<cartes.length;i++){
+
+        let carta = getCartaJS(cartes,i);
+        let cubellButton = getButtonJS(carta,'fa-trash-alt');
+        cubellButton.addEventListener('click',function(){carta.parentNode.removeChild(carta);})
+
+    }
+
+}
+/**
+*
+* Exercici 3 Moure cartes
+*
+*/
+function moureCartesJQ(){
+
+        let $cartesma = $('#cartes-ma');
+        let $cartes = $cartesma.children('.carta');
+
+        for (let i=0; i<$cartes.length; i++){
+
+        let $carta = getCartaJQ($cartes,i);
+
+        let $botoEsquerra = getButtonJQ($carta,'.fa-arrow-left');
+        let $botoDret = getButtonJQ($carta,'.fa-arrow-right');
+
+        $botoEsquerra.on('click',moureEsquerraJQ);
+        $botoDret.on('click',moureDretaJQ);
+
+    }
+
+}
+/**
+*
+* Exercici 4 Crear carta al tereny de joc JS
+*
+*/
+function cartaJocJS(){
+    var cartes_ma = document.getElementById('cartes-ma');
+    var cartes = cartes_ma.querySelectorAll('div.carta');
+    for(let i=0;i<cartes.length;i++){
+
+        let carta = getCartaJS(cartes,i);
+        let dausButton = getButtonJS(carta,'fa-dice');
+        dausButton.addEventListener('click',jugarCartaJS)
+
+    }
+}
+
+
+
+
 
